@@ -1,0 +1,22 @@
+id,idAlumno,nombre,nota
+1,1,Matemáticas,10
+2,1,Lengua y Literatura,10
+3,1,Inglés,10
+4,1,Informática,10
+5,2,Matemáticas,5
+6,2,Lengua y Literatura,7
+7,3,Inglés,7
+8,3,Matemáticas,4
+9,3,Lengua y Literatura,5
+10,4,Inglés,4
+11,4,Informática,8
+12,4,Lengua y Literatura,6
+13,5,Inglés,5
+14,5,Matemáticas,5
+15,5,Lengua y Literatura,5
+16,5,Informática,7
+17,6,Inglés,6
+18,6,Matemáticas,6
+19,6,Lengua y Literatura,5
+20,6,Informática,9
+

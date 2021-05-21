@@ -30,7 +30,7 @@ public class MySQLAccess {
      * Almacenamos los datos de conexi�n con nuestra BD.
      */
     final private static String user = "root";
-    final private static String passwd = "12345678";
+    final private static String passwd = "";
     
     /**
      * Establece el nombre de la base de datos para conectar
@@ -44,8 +44,7 @@ public class MySQLAccess {
         try {
             /*
              * Cargamos el driver MySQL que hemos descargado anteriormente.
-             * Cada BD tiene su propio driver, este �nicamente es para 
-             * las BD MySQL.
+             * Cada BD tiene su propio driver, este es para las BD MySQL.
              */
             Class.forName("com.mysql.cj.jdbc.Driver");
             

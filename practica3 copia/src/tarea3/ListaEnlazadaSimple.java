@@ -1,17 +1,26 @@
 package tarea3;
 
-
+/**
+ * Clase ListaEnlazadaSimple que crea un objeto de tipo lista enlazada simple
+ * 
+ * @author Manuel Prieto - Catherine Ballester
+ */
 public class ListaEnlazadaSimple {
 	protected Nodo primerNodo;
 	protected int tamano;
 
-	// se crea una lista vac√≠a
+	/**
+	 * Se crea una lista vacia
+	 */
 	public ListaEnlazadaSimple() {
 		primerNodo = null;
 		tamano = 0;
-	}
-	
-	//a√±adir un nodo
+	}	
+
+	/**
+	 * Inserta un nuevo nodo
+	 * @param contenido
+	 */
 	public void insert(int contenido) {
 		Nodo nodo = new Nodo(contenido, null);
 	    nodo.setSiguiente(primerNodo);
@@ -19,7 +28,10 @@ public class ListaEnlazadaSimple {
 	    tamano++;
 	}
 	
-	//eliminar un nodo
+	/**
+	 * Elimina el primer nodo obteniendo el contenido
+	 * @return
+	 */
 	public Object extract() {
 		Object salida = null;
 	    if (!isEmpty()) {
@@ -29,46 +41,59 @@ public class ListaEnlazadaSimple {
 	    return salida;
 	}
 	
-	public void print(int n) {
-		if (!isEmpty()) {
-			Nodo nodo = primerNodo;
-			for (int i = 0; i < n; i++) {
-				nodo = nodo.getSiguiente();
-				if (nodo == null) {
-					return;
-				}
-	      }
-	      System.out.println(nodo.getContenido());
-	    }
+	/**
+	 * Imprime un nodo a travÈs de su indice
+	 * @param n
+	 */
+	public void print(int indice) {
+		int contador = 0;
+        
+        // Empezamos desde el primer nodo la iteraciÛn
+        Nodo nodoTemporal = primerNodo;
+        
+        while(contador < indice){
+            
+            // Obtenemos el siguiente nodo
+            nodoTemporal = nodoTemporal.getSiguiente();
+            contador++;
+        }
+        
+        String contenido = nodoTemporal.getContenido().toString();
+        System.out.println(contenido);
 	}
 
+	/**
+	 * Imprime todos los nodos enlazando uno detr·s del otro
+	 */
 	public void print() {
 		if (!isEmpty()) {
 			Nodo nodo = primerNodo;
 			while (nodo != null) {
-				System.out.println(nodo.getContenido());
+				System.out.println(nodo.getContenido() + " => ");
 		        nodo = nodo.getSiguiente();
 		    }
 		}
 	}
 	
-	//calcula el promedio
+	/*
+	 * Calcula el promedio
+	 */
 	public double promedio() {
 		double sumaTotal = 0;
 		Nodo nodo = primerNodo;
 		for(int i = 0; i < tamano; i++) {
-			sumaTotal = sumaTotal + nodo.getContenido();
+			sumaTotal = sumaTotal + ((Number) nodo.getContenido()).doubleValue();
 			nodo = nodo.getSiguiente();
 		}
 		double promedio = sumaTotal/tamano;
 		return promedio;
 	}
-	//comprueba si la lista esta vacia
+	
+	/**
+	 * Comprueba si la lista esta vacia
+	 * @return
+	 */
 	public boolean isEmpty() {
-		if (primerNodo == null) {
-			return true;
-		} else {
-	    	return false;
-	    }
+		return (primerNodo == null) ? true : false ;
 	}
 }
